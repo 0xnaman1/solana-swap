@@ -69,8 +69,8 @@ pub fn save_offer(ctx: Context<MakeOffer>, id: u64, token_b_wanted_amount: u64) 
     let offer = &mut ctx.accounts.offer;
     offer.id = id;
     offer.maker = ctx.accounts.maker.key();
-    offer.mint_a = ctx.accounts.token_mint_a.key();
-    offer.mint_b = ctx.accounts.token_mint_b.key();
+    offer.token_mint_a = ctx.accounts.token_mint_a.key();
+    offer.token_mint_b = ctx.accounts.token_mint_b.key();
     offer.token_b_wanted_amount = token_b_wanted_amount;
     offer.bump = ctx.bumps.offer;
     Ok(())
